@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
-import {Text, View} from 'react-native';
-
+import React, { Component } from 'react';
+import Navigator from './src/navigation';
+import { Provider } from 'react-redux';
+import Store from './src/store'
 
 export default class App extends Component {
   render() {
     return (
-      <View style={{flex:1,justifyContent:'center',alignItems:'center'}} >
-        <Text>Welcome to React Native!</Text>
-        <Text>To get started, edit App.js</Text>
-      </View>
+      <Provider store={Store}>
+        <Navigator />
+      </Provider>
     );
   }
 }
