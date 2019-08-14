@@ -9,10 +9,14 @@ import styles from './styles';
 class HomeView extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            search:''
+        }
     }
 
     goToDeals = () => {
         this.props.navigation.navigate('Deals')
+        this.setState({ search:'' })
     }
 
 
@@ -46,7 +50,9 @@ class HomeView extends Component {
                             style={styles.searchInput}
                             placeholderTextColor='#cfcece'
                             placeholder="Search Category, Place or Merchant"
-                            // onChangeText={(searchString) => { this.setState({ searchString }) }}
+                            onSubmitEditing={()=>this.goToDeals()}
+                            onChangeText={(search) => { this.setState({ search }) }}
+                            value={this.state.search}
                             underlineColorAndroid="transparent"
                         />
                     </View>

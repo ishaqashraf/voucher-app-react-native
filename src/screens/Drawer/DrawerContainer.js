@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DrawerView from './DrawerView';
 import { connect } from 'react-redux';
 
+
 class DrawerContainer extends Component {
     constructor(props) {
         super(props);

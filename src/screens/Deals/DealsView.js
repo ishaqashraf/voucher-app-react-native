@@ -26,25 +26,26 @@ class DealsView extends Component {
         return (
             <View style={styles.container}>
                 <Header title="Offers" search navigation={this.props.navigation} />
-                <Loader loading={loading} />
-                <View style={styles.contentContainer}>
-                    <ScrollView style={styles.dealsContainer} showsVerticalScrollIndicator={false} >
-                        <FlatList
-                            data={deals}
-                            renderItem={({ item }) => (
-                                <ListView
-                                    item={item}
-                                    favIcon={HEART_ICON}
-                                    onPress={(dealID) => this.goToDealDetail(dealID)}
-                                />
-                            )}
-                            keyExtractor={item => item.dealID}
-                        />
-                    </ScrollView>
-                    <View style={styles.tabContainer} >
-                        <Image source={DEAL_TAB} style={styles.tabStyle} resizeMode='contain' />
+                {deals.length == 0 ? <Loader loading={loading} /> :
+                    <View style={styles.contentContainer}>
+                        <ScrollView style={styles.dealsContainer} showsVerticalScrollIndicator={false} >
+                            <FlatList
+                                data={deals}
+                                renderItem={({ item }) => (
+                                    <ListView
+                                        item={item}
+                                        favIcon={HEART_ICON}
+                                        onPress={(dealID) => this.goToDealDetail(dealID)}
+                                    />
+                                )}
+                                keyExtractor={item => item.dealID}
+                            />
+                        </ScrollView>
+                        <View style={styles.tabContainer} >
+                            <Image source={DEAL_TAB} style={styles.tabStyle} resizeMode='contain' />
+                        </View>
                     </View>
-                </View>
+                }
             </View>
         );
     }

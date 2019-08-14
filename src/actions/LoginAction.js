@@ -14,6 +14,7 @@ export const loginUser = () => {
             .then((result) => {
                 if (result.isCancelled) {
                     console.log("Login cancelled");
+                    loginuserFail(dispatch,'error')
                 } else {
                     AccessToken.getCurrentAccessToken()
                     .then((data) => {
@@ -30,6 +31,8 @@ export const loginUser = () => {
                                     console.error(error)
                                     loginuserFail(dispatch,error)
                                 } else {
+                                    const User = { "name":result.name,"profileImage":result.picture.data.url }
+                                    AsyncStorage.setItem('User',JSON.stringify(User))
                                     console.log(result)
                                     loginUserSuccess(dispatch,result)
                                 }

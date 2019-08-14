@@ -10,14 +10,14 @@ class LoginView extends Component {
         super(props);
     }
 
-    // componentDidMount() {
-    //     checkuserLogin()
-    //         .then(user => {
-    //             if (user) {
-    //                 this.props.navigation.navigate('App');
-    //             }
-    //         })
-    // }
+    componentDidMount() {
+        checkuserLogin()
+            .then(user => {
+                if (user) {
+                    this.props.navigation.navigate('App');
+                }
+            })
+    }
 
     onPress = () => {
         this.props.loginUser();

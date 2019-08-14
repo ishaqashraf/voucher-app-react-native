@@ -1,4 +1,4 @@
-import { AccessToken } from 'react-native-fbsdk';
+import { AsyncStorage } from 'react-native';
 
 export const dateSplit = (date) => {
     const newDate = date.split(',')[1]
@@ -6,13 +6,12 @@ export const dateSplit = (date) => {
 }
 
 export const checkuserLogin = () => {
-    return AccessToken.getCurrentAccessToken()
-    .then(token => {
-        if(token.accessToken){
-            return true;
-        }else{
-            return false;
-        }
-        
-    })
+    return AsyncStorage.getItem('User')
+        .then(user => {
+            if (user) {
+                return true;
+            } else {
+                return false;
+            }
+        })
 }

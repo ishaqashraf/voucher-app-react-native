@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView,AsyncStorage } from 'react-native';
 import { FOOTER_LOGO } from '../../assets/images';
 import styles from './styles';
 
@@ -7,19 +7,32 @@ import styles from './styles';
 class DrawerView extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            user:{
+                name:"User",
+                profileImage:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXe5fuXbT5fMvYwS122nUjRBqnN3nujuQfQNjWekF8kn2OimhtWQ"
+            }
+        }
+    }
+
+    componentDidMount(){
+        AsyncStorage.getItem('User')
+        .then(res => JSON.parse(res))
+        .then(resp => {
+            this.setState({
+                user:resp
+            })
+        })
     }
 
     render() {
-        const { userInfo } = this.props;
-        const userName = userInfo.name;
-        const profileImage = userInfo.picture.data.url;
-        const NoProfileImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXe5fuXbT5fMvYwS122nUjRBqnN3nujuQfQNjWekF8kn2OimhtWQ"
+        const { user } = this.state;
         return (
             <View style={styles.container}>
                 <View style={styles.contentContainer}>
                     <View style={styles.profileContainer}>
-                        <Image source={{ uri: !profileImage ? NoProfileImage : profileImage }} style={styles.profileImage} />
-                        <Text style={styles.userText} >{`Nice to meet you ${userName}`}</Text>
+                        <Image source={{ uri: user.profileImage }} style={styles.profileImage} />
+                        <Text style={styles.userText} >{`Nice to meet you ${user.name}`}</Text>
                     </View>
                     <ScrollView style={styles.labelContainer}>
                         <Text style={styles.labelText}>How it Works</Text>

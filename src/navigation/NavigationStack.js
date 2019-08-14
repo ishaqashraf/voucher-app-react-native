@@ -17,7 +17,7 @@ const AuthStack = createStackNavigator(
     }
 )
 
-const AppStack = createDrawerNavigator(
+const MainStack = createStackNavigator(
     {
         Home: {
             screen: Home
@@ -33,11 +33,19 @@ const AppStack = createDrawerNavigator(
         }
     },
     {
+        headerMode: 'none',
+        initialRouteName: 'Home'
+    }
+)
+
+const AppStack = createDrawerNavigator(
+    {
+       Main: MainStack
+    },
+    {
         contentComponent: CustomDrawer,
         drawerType: 'slide',
-        drawerBackgroundColor: '#31002f',
-        initialRouteName: 'Home',
-        // headerMode:'none'
+        drawerBackgroundColor: '#31002f'
     }
 );
 
