@@ -18,13 +18,14 @@ class Header extends Component {
     }
 
     render() {
+        console.log("props",this.props)
         const { title,back,search } = this.props;
         return (
             <SafeAreaView style={styles.headerContainer}>
                 <TouchableOpacity onPress={() =>this.drawerOpen()} >
                     <Image source={back ? BACK_ICON : MENU_ICON} style={styles.menuIcon} resizeMode='contain' />
                 </TouchableOpacity>
-                <Text style={styles.titleText}>{this.props.title}</Text>
+                <Text style={styles.titleText}>{title}</Text>
                 {search ?
                  <TouchableOpacity>
                      <Image source={SEARCH_HEADER_ICON} style={styles.menuIcon} resizeMode='contain' /> 
@@ -43,7 +44,7 @@ const styles = {
         alignItems:'flex-end',
         justifyContent:'space-between',
         backgroundColor: '#34d486',
-        height: 60,
+        height: 50,
         padding:10
     },
     titleText:{
@@ -52,7 +53,7 @@ const styles = {
         fontWeight:'500'
     },
     menuIcon:{
-        width:22,
+        width:20,
         height:20
     }
 }

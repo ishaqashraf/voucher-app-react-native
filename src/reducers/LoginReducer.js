@@ -8,7 +8,8 @@ import {
 const INITIAL_STATE = {
     user: null,
     error: '',
-    loading: false
+    loading: false,
+    userInfo:null
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -16,7 +17,7 @@ export default (state = INITIAL_STATE, action) => {
         case LOGIN_USER:
             return { ...state, loading: true, error: '' };
         case LOGIN_USER_SUCCESS:
-            return { ...state, ...INITIAL_STATE, user: 1 };
+            return { ...state, ...INITIAL_STATE, user: true, userInfo: action.payload };
         case LOGIN_USER_FAIL:
             return { ...state, error: 'Authentication Failed', loading: false };
         default:

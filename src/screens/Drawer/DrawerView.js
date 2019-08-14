@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
-import { PROFILE_IMAGE,FOOTER_LOGO } from '../../images';
+import { FOOTER_LOGO } from '../../images';
 import styles from './styles';
 
 
@@ -10,12 +10,16 @@ class DrawerView extends Component {
     }
 
     render() {
+        const { userInfo } = this.props;
+        const userName = userInfo.name;
+        const profileImage = userInfo.picture.data.url;
+        const NoProfileImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXe5fuXbT5fMvYwS122nUjRBqnN3nujuQfQNjWekF8kn2OimhtWQ"
         return (
             <View style={styles.container}>
                 <View style={styles.contentContainer}>
                     <View style={styles.profileContainer}>
-                        <Image source={PROFILE_IMAGE} style={styles.profileImage} />
-                        <Text style={styles.userText} >Nice to meet you User1</Text>
+                        <Image source={{ uri: !profileImage ? NoProfileImage : profileImage }} style={styles.profileImage} />
+                        <Text style={styles.userText} >{`Nice to meet you ${userName}`}</Text>
                     </View>
                     <ScrollView style={styles.labelContainer}>
                         <Text style={styles.labelText}>How it Works</Text>

@@ -4,27 +4,54 @@ import {
     LOGIN_USER_SUCCESS,
     LOGIN_USER_FAIL
 } from './types';
-import getAllDeals from '../api/methods/getAllDeals';
+// import { LoginManager, AccessToken, GraphRequest, GraphRequestManager } from 'react-native-fbsdk';
 
 
-export const loginUser = (name) => {
+export const loginUser = () => {
     return (dispatch) => {
         dispatch({ type: LOGIN_USER });
-        getAllDeals()
-        AsyncStorage.setItem("user",JSON.stringify(name))
-            .then(user => loginUserSuccess(dispatch, user))
-            .catch(err => loginuserFail(dispatch, err))
+        LoginManager.logInWithPermissions(["public_profile"])
+            .then((result) => {
+                if (result.isCancelled) {
+                    console.log("Login cancelled");
+                } else {
+                    AccessToken.getCurrentAccessToken()
+                    .then((data) => {
+                            const graphRequest = new GraphRequest('/me', {
+                                accessToken: data.accessToken,
+                                parameters: {
+                                    fields: {
+                                        string: 'picture.type(large),name'
+                                    },
+                                },
+                            }, (error, result) => {
+                                if (error) {
+                                    console.error(error)
+                                    loginuserFail(dispatch,error)
+                                } else {
+                                    console.log(result)
+                                    loginUserSuccess(dispatch,result)
+                                }
+                            })
+                            new GraphRequestManager().addRequest(graphRequest).start()
+                        }
+                    )
+                }
+            },
+                (error) => {
+                    loginuserFail(dispatch,error)
+                    console.log("Login fail with error: " + error);
+                }
+            );
     };
 };
 
-const loginUserSuccess = (dispatch, user) => {
-    dispatch({ type: LOGIN_USER_SUCCESS });
-
+const loginUserSuccess = (dispatch, data) => {
+    dispatch({ type: LOGIN_USER_SUCCESS, payload:data });
 }
 
 const loginuserFail = (dispatch, error) => {
-    dispatch({ type: LOGIN_USER_FAIL });
-    alert(error);
+    dispatch({ type: LOGIN_USER_FAIL,payload:error });
 };
 
 

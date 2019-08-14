@@ -12,15 +12,13 @@ class DrawerContainer extends Component {
     }
 }
 
-export default DrawerContainer;
 
-// function mapStateToProps() {
-//     return {};
-// }
-// function mapDispatchToProps() {
-//     return {};
-// }
-// export default connect(
-//     mapStateToProps,
-//     mapDispatchToProps
-// )(HomeContainer);
+const mapStateToProps = ({ Login }) => {
+    const { userInfo } = Login;
+    return { userInfo };
+}
+
+export default connect(
+    mapStateToProps,
+    null
+)(DrawerContainer);
