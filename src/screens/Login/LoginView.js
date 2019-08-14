@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, ImageBackground, ActivityIndicator } from 'react-native';
-import { LOGIN_BACKGROUND } from '../../images';
+import { LOGIN_BACKGROUND } from '../../assets/images';
 import styles from './styles';
 import { checkuserLogin } from '../../utils';
 

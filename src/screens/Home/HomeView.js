@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ImageBackground, TextInput, Image, TouchableOpacity } from 'react-native';
-import { HOME_BACKGROUND, SEARCH_ICON, BOTTOM_TAB } from '../../images';
+import { HOME_BACKGROUND, SEARCH_ICON, BOTTOM_TAB } from '../../assets/images';
 import { categories } from '../../utils/fakeData';
 import Header from '../../components/Header';
 import styles from './styles';

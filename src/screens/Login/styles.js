@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 
 const styles = StyleSheet.create({
@@ -23,8 +23,8 @@ const styles = StyleSheet.create({
     },
     btnText:{
         color:'#fff',
-        fontWeight:'500',
-        fontSize:18
+        fontSize:18,
+        fontFamily:'ProximaNova-Semibold'
     },
 });
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
-import { FOOTER_LOGO } from '../../images';
+import { FOOTER_LOGO } from '../../assets/images';
 import styles from './styles';
 
 

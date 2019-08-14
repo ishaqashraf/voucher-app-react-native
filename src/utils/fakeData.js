@@ -1,4 +1,4 @@
-import { FOOD_ICON,BEAUTY_ICON,BOOK_ICON,BRUNCH_ICON,FAMILY_ICON,SPOTS_ICON } from '../images';
+import { FOOD_ICON,BEAUTY_ICON,BOOK_ICON,BRUNCH_ICON,FAMILY_ICON,SPOTS_ICON } from '../assets/images';
 
 
 export const categories = [

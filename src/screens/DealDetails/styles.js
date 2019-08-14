@@ -22,13 +22,14 @@ const styles = StyleSheet.create({
     titleDescription:{
         color:'#808184',
         fontSize:20,
-        fontWeight:'500'
+        fontFamily:'ProximaNova-Medium'
     },
     descriptionText:{
         color:'#818080',
         marginTop:20,
         letterSpacing:0.5,
-        lineHeight: 20
+        lineHeight: 20,
+        fontFamily:'ProximaNova-Regular'
     },
     locationContainer:{
 
@@ -45,15 +46,16 @@ const styles = StyleSheet.create({
     locationText:{
         color:'#9d9d9b',
         marginBottom:10,
-        fontSize:14,
+        fontSize:16,
         textAlign:'center',
         width:'65%',
-        fontWeight:'500'
+        fontFamily:'ProximaNova-Medium'
+
     },
     distanceText:{
         color:'#fff',
-        fontSize:18,
-        fontWeight:'500'
+        fontSize:20,
+        fontFamily:'ProximaNova-Medium'
     },
     addressLinkContainer:{
         flexDirection:'row',
@@ -71,7 +73,8 @@ const styles = StyleSheet.create({
         height:25
     },
     directionText:{
-        color:'#34d486'
+        color:'#34d486',
+        fontFamily:'ProximaNova-Medium'
     },
     btnContainer:{
         backgroundColor:'#993094',
@@ -85,8 +88,8 @@ const styles = StyleSheet.create({
     },
     btnText:{
         color:'#fff',
-        fontWeight:'600',
-        fontSize:18
+        fontSize:18,
+        fontFamily:'ProximaNova-Semibold'
     },
     tabContainer:{
         position: 'absolute', 

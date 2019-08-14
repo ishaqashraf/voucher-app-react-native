@@ -24,12 +24,12 @@
 	<string>1</string>
 	<key>CFBundleURLTypes</key>
 	<array>
-	<dict>
-		<key>CFBundleURLSchemes</key>
-		<array>
-		<string>fb2464804690419836</string>
-		</array>
-	</dict>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb2464804690419836</string>
+			</array>
+		</dict>
 	</array>
 	<key>FacebookAppID</key>
 	<string>2464804690419836</string>
@@ -37,10 +37,10 @@
 	<string>voucher</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-	<string>fbapi</string>
-	<string>fb-messenger-share-api</string>
-	<string>fbauth2</string>
-	<string>fbshareextension</string>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -58,7 +58,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -75,5 +75,13 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>ProximaNova-Light.ttf</string>
+		<string>ProximaNova-Medium.ttf</string>
+		<string>ProximaNova-Regular.ttf</string>
+		<string>ProximaNova-Semibold.ttf</string>
+		<string>ProximaNova-Thin.ttf</string>
+	</array>
 </dict>
 </plist>

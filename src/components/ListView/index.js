@@ -71,11 +71,14 @@ const styles = {
     },
     titleText: {
         marginTop: 5,
-        color: '#3b3b3b'
+        color: '#3b3b3b',
+        fontFamily:'ProximaNova-Medium',
+        fontSize:18
     },
     tagText: {
         marginTop: 5,
-        color: '#3b3b3b'
+        color: '#3b3b3b',
+        fontFamily:'ProximaNova-Regular',
     },
     HeartIcon: {
         height: 20
@@ -96,11 +99,13 @@ const styles = {
     },
     infoText1: {
         color: '#53b085',
-        fontSize: 14
+        fontSize: 14,
+        fontFamily:'ProximaNova-Regular',
     },
     infoText2: {
         color: '#cbcbc9',
-        fontSize: 12
+        fontSize: 12,
+        fontFamily:'ProximaNova-Regular',
     },
 }
 

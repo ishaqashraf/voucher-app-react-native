@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 10,
         color: '#000',
-        fontSize: 15
+        fontSize: 15,
+        fontFamily:'ProximaNova-Medium'
     },
     searchIcon: {
         padding: 10,
@@ -54,8 +55,8 @@ const styles = StyleSheet.create({
     catText: {
         marginTop: 20,
         color: '#707070',
-        fontWeight: '600',
-        textAlign:'center'
+        textAlign:'center',
+        fontFamily:'ProximaNova-Medium'
     },
     tabContainer: {
         position: 'absolute', 

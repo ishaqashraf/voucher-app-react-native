@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ImageBackground, Image, TouchableOpacity, ScrollView } from 'react-native';
-import { MAP_IMAGE, DIRECTION_ICON, WEBSITE_ICON, DEAL_DETAIL_TAB } from '../../images';
+import { MAP_IMAGE, DIRECTION_ICON, WEBSITE_ICON, DEAL_DETAIL_TAB } from '../../assets/images';
 import Header from '../../components/Header';
 import styles from './styles';
 import Loader from '../../components/Loader';

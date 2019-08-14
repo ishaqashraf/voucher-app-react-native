@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity, FlatList } from 'react-native';
-import { HEART_ICON, DEAL_TAB } from '../../images';
+import { HEART_ICON, DEAL_TAB } from '../../assets/images';
 import Header from '../../components/Header';
 import Loader from '../../components/Loader';
 import styles from './styles';

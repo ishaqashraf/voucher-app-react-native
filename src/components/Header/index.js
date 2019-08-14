@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text,Image,TouchableOpacity } from 'react-native';
-import { MENU_ICON,SEARCH_HEADER_ICON,BACK_ICON } from '../../images'
+import { MENU_ICON,SEARCH_HEADER_ICON,BACK_ICON } from '../../assets/images'
 import {SafeAreaView} from 'react-navigation';
 
 
@@ -49,8 +49,8 @@ const styles = {
     },
     titleText:{
         color:'#fff',
-        fontSize:16,
-        fontWeight:'500'
+        fontSize:20,
+        fontFamily:'ProximaNova-Medium'
     },
     menuIcon:{
         width:20,

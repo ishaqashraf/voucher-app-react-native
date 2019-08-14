@@ -20,9 +20,9 @@ const styles = StyleSheet.create({
     },
     userText:{
         color:'#fff',
-        fontWeight:'500',
         fontSize:18,
-        marginTop:20
+        marginTop:20,
+        fontFamily:'ProximaNova-Medium'
     },
     labelContainer:{
         paddingTop:20
@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
     labelText:{
         color:'#fff',
         fontSize:18,
-        marginTop:20
+        marginTop:20,
+        fontFamily:'ProximaNova-Medium'
     },
     footer:{
         position:'absolute',
