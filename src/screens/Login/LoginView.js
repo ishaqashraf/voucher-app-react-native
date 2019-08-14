@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, ImageBackground, ActivityIndicator } from 'react-native';
 import { LOGIN_BACKGROUND } from '../../images';
 import styles from './styles';
-// import { checkuserLogin } from '../../utils';
+import { checkuserLogin } from '../../utils';
 
 
 class LoginView extends Component {
@@ -20,7 +20,7 @@ class LoginView extends Component {
     // }
 
     onPress = () => {
-        // this.props.loginUser();
+        this.props.loginUser();
     }
 
     componentWillReceiveProps(newProps) {

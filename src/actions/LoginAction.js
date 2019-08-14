@@ -4,19 +4,20 @@ import {
     LOGIN_USER_SUCCESS,
     LOGIN_USER_FAIL
 } from './types';
-// import { LoginManager, AccessToken, GraphRequest, GraphRequestManager } from 'react-native-fbsdk';
+import { LoginManager, AccessToken, GraphRequest, GraphRequestManager } from 'react-native-fbsdk';
 
 
 export const loginUser = () => {
     return (dispatch) => {
         dispatch({ type: LOGIN_USER });
-        LoginManager.logInWithPermissions(["public_profile"])
+        LoginManager.logInWithReadPermissions(["public_profile"])
             .then((result) => {
                 if (result.isCancelled) {
                     console.log("Login cancelled");
                 } else {
                     AccessToken.getCurrentAccessToken()
                     .then((data) => {
+                        console.log("data",data)
                             const graphRequest = new GraphRequest('/me', {
                                 accessToken: data.accessToken,
                                 parameters: {

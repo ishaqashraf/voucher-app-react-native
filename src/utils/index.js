@@ -1,4 +1,4 @@
-// import { AccessToken } from 'react-native-fbsdk';
+import { AccessToken } from 'react-native-fbsdk';
 
 export const dateSplit = (date) => {
     const newDate = date.split(',')[1]
